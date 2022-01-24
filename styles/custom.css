@@ -1,0 +1,43 @@
+.main {
+  padding: 8px 0;
+}
+
+.header {
+  padding: 4px;
+  margin-bottom: 8px;
+}
+.wordle {
+  margin-right: 8px;
+}
+.swords {
+  font-size: 18px;
+}
+
+.letter-input.bg-green {
+  background: #2e7d32;
+}
+.letter-input.bg-yellow {
+  background: yellow;
+}
+.letter-input.c-black input {
+  color: black;
+}
+.letter-input {
+  background: #393e46;
+  border-radius: 8px;
+  margin: 2px;
+  width: 20%;
+  aspect-ratio: 1;
+}
+
+.letter-input input {
+  text-align: center;
+}
+.keyboard {
+  border-top: 1px solid #393e46;
+  padding-top: 12px;
+}
+.keyboard-button {
+  width: 10%;
+  border-radius: 8px;
+}

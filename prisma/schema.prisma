@@ -1,0 +1,22 @@
+datasource db {
+        url      = env("DATABASE_URL")
+        provider = "postgresql"
+}
+
+generator client {
+        provider = "prisma-client-js"
+}
+
+model Match {
+        id      String   @id @default(uuid())
+        results Result[]
+        word    String   @default("")
+}
+
+model Result {
+        id         String   @id @default(uuid())
+        match      Match    @relation(fields: [matchId], references: [id])
+        matchId    String
+        guesses    String[]
+        playerName String
+}

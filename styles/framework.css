@@ -1,0 +1,92 @@
+/* Display */
+.inline-block {
+  display: inline-block;
+}
+
+/* Position */
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+
+/* Widths */
+.w-100 {
+  width: 100%;
+}
+.w-50 {
+  width: 50%;
+}
+.w-10 {
+  width: 10%;
+}
+
+/* Heights */
+.mh-100 {
+  min-height: 100vh;
+}
+
+/* Flex */
+.flex {
+  display: flex;
+}
+.flex-1 {
+  flex: 1;
+}
+.flex-column {
+  flex-direction: column;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.align-center {
+  align-items: center;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* Padding */
+.p1 {
+  padding: 1rem;
+}
+.px1 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Margin */
+.mt0 {
+  margin-top: 0;
+}
+.mb0 {
+  margin-bottom: 0;
+}
+.ml1 {
+  margin-left: 1rem;
+}
+.mr1 {
+  margin-right: 1rem;
+}
+
+/* Text */
+.text-center {
+  text-align: center;
+}
+
+/* Mouse */
+.pointer {
+  cursor: pointer;
+}
+
+/* Border */
+.br50 {
+  border-radius: 50%;
+}
