@@ -12,7 +12,7 @@ export default function InviteLink({ inviterName, roomId, btnText }: { inviterNa
 					toast.error('Could not copy link to clipboard. Copy link from navbar instead.')
 				}
 			}}
-			className="my05"
+			sx={{ marginTop: "4px", marginBottom: "4px" }}
 			variant='outlined'
 		>
 			{btnText}

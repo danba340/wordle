@@ -74,7 +74,7 @@ const Stats: NextPage = () => {
 						<tr>
 							<th></th>
 							<th>Player</th>
-							<th>Lowest average</th>
+							<th>Average guesses</th>
 						</tr>
 						{playersByLowestAverage.map((player, index) => {
 							return (
