@@ -7,16 +7,35 @@ generator client {
         provider = "prisma-client-js"
 }
 
-model Match {
+model Player {
+        id     String   @id @default(uuid())
+        name   String
+        rooms  Room[]
+        Result Result[]
+}
+
+model Room {
         id      String   @id @default(uuid())
-        results Result[]
-        word    String   @default("")
+        name    String
+        matches Match[]
+        players Player[]
+}
+
+model Match {
+        id        String   @id @default(uuid())
+        createdAt DateTime @default(now())
+        results   Result[]
+        word      String   @default("")
+        room      Room     @relation(fields: [roomId], references: [id])
+        roomId    String
 }
 
 model Result {
-        id         String   @id @default(uuid())
-        match      Match    @relation(fields: [matchId], references: [id])
-        matchId    String
-        guesses    String[]
-        playerName String
+        id        String   @id @default(uuid())
+        createdAt DateTime @default(now())
+        match     Match    @relation(fields: [matchId], references: [id])
+        matchId   String
+        guesses   String[]
+        player    Player   @relation(fields: [playerId], references: [id])
+        playerId  String
 }

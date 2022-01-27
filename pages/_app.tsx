@@ -4,12 +4,28 @@ import '../styles/custom.css'
 
 import type { AppProps } from 'next/app'
 import Head from "next/head"
-import { SWRConfig } from 'swr';
-import fetcher from "../lib/fetcher"
 import { Toaster } from "react-hot-toast"
 
 import CssBaseline from '@mui/material/CssBaseline';
 import { Container } from '@mui/material'
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#ffd369',
+    },
+    success: {
+      main: '#2e7d32',
+    },
+    info: {
+      main: '#393e46',
+    },
+    secondary: {
+      main: '#202024',
+    },
+  },
+});
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -20,12 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
       <CssBaseline />
-      <SWRConfig
-        value={{
-          refreshInterval: 3000,
-          fetcher
-        }}
-      >
+      <ThemeProvider theme={theme}>
         <Container maxWidth="xs">
           <div className="main flex flex-column mh-100">
             <Component {...pageProps} />
@@ -35,11 +46,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           toastOptions={{
             style: {
               background: "#393E46",
-              color: "#eee"
+              color: "#eee",
             }
           }}
         />
-      </SWRConfig>
+      </ThemeProvider>
     </>
   )
 }

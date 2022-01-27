@@ -1,3 +1,11 @@
+export const getWord = () => {
+  return words[Math.floor(Math.random() * words.length)];
+};
+
+export const exists = (word: string) => {
+  return words.includes(word.toLowerCase());
+};
+
 const words = [
   'aback',
   'abase',
@@ -2498,5 +2506,3 @@ const words = [
   'yummy',
   'zones',
 ];
-
-export default words;

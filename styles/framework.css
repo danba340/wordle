@@ -61,6 +61,10 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.px2 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 
 /* Margin */
 .mt0 {
@@ -68,6 +72,10 @@
 }
 .mb0 {
   margin-bottom: 0;
+}
+.my05 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .ml1 {
   margin-left: 1rem;
@@ -89,4 +97,9 @@
 /* Border */
 .br50 {
   border-radius: 50%;
+}
+
+/* Colors */
+.c-yellow {
+  color: #ffd369;
 }

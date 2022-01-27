@@ -18,6 +18,22 @@ a {
 }
 
 input[type='text'] {
-  font-size: 32px;
-  font-weight: bolder;
+  color: #eee;
+}
+
+button {
+  white-space: pre;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0.5em 0;
+}
+
+td {
+  text-align: center;
+  border: 1px solid #ffd369;
+  padding: 2px 4px;
 }

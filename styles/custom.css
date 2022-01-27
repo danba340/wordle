@@ -3,21 +3,32 @@
 }
 
 .header {
-  padding: 4px;
-  margin-bottom: 8px;
+  padding: 0 4px 4px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #393e46;
 }
-.wordle {
-  margin-right: 8px;
+.header-title {
+  font-size: 24px;
+  font-weight: bolder;
+  color: #eee;
 }
-.swords {
+.nut {
+  font-size: 30px;
+  line-height: 24px;
+  color: #ffd369;
+}
+
+.text-field {
   font-size: 18px;
+  margin: 8px 0;
+  text-align: center;
 }
 
 .letter-input.bg-green {
   background: #2e7d32;
 }
 .letter-input.bg-yellow {
-  background: yellow;
+  background: #ffd369;
 }
 .letter-input.c-black input {
   color: black;
@@ -32,6 +43,8 @@
 
 .letter-input input {
   text-align: center;
+  font-size: 32px;
+  font-weight: bolder;
 }
 .keyboard {
   border-top: 1px solid #393e46;
