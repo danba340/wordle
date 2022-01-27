@@ -26,7 +26,7 @@ export default function Keyboard({ word, guesses, onKeyPress }: { word: string, 
 						onKeyPress(key)
 					}}
 					variant="contained"
-					color={isGreen ? "success" : isYellow ? "primary" : isBlack ? "secondary" : key === "⌫" ? "error" : "info"} sx={{ width: '✓⌫'.includes(key) ? "calc(15% - 12px)" : "calc(10% - 18px)", minWidth: 0, margin: "1px" }} key={key}>{key}
+					color={isGreen ? "success" : isYellow ? "primary" : isBlack ? "secondary" : key === "⌫" ? "error" : "info"} sx={{ width: '✓⌫'.includes(key) ? "calc(15% - 4px)" : "calc(10% - 2px)", minWidth: 0, margin: "1px", padding: "6px 15px" }} key={key}>{key}
 				</Button>
 			)
 		})

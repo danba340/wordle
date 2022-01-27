@@ -105,10 +105,11 @@ const Home: NextPage = () => {
           <h2>Your rooms</h2>
           {!rooms.length ? (<div>No rooms yet</div>) : rooms.map(room => {
             const unplayedInRoom = unplayed ? unplayed.filter(match => match.roomId === room.id).length : []
+            console.log(unplayedInRoom)
             return (<div key={room.id}>
               <h3>{room.name}</h3>
               {unplayedInRoom ? (
-                <p className='px2 text-center'>📣 You have {unplayedInRoom} unplayed matches in this room</p>
+                <p className='px2 text-center'>📣 You have {unplayedInRoom} unplayed match{unplayedInRoom === 1 ? "" : "es"} in this room</p>
               ) : null}
               <h4>Players</h4>
               <ul>
