@@ -23,6 +23,9 @@
   margin: 8px 0;
   text-align: center;
 }
+.text-field input {
+  text-align: center;
+}
 
 .letter-input.bg-green {
   background: #2e7d32;

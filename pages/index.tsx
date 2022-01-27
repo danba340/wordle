@@ -117,18 +117,20 @@ const Home: NextPage = () => {
                   )
                 })}
               </ul>
-              <Button
-                onClick={() => {
-                  if (player?.name) {
-                    setRoom(room)
-                    push(`/play`)
-                  }
-                }}
-                className="my05"
-                variant='outlined'
-              >
-                Play
-              </Button>
+              <div className='text-center'>
+                <Button
+                  onClick={() => {
+                    if (player?.name) {
+                      setRoom(room)
+                      push(`/play`)
+                    }
+                  }}
+                  className="my05"
+                  variant='outlined'
+                >
+                  Play
+                </Button>
+              </div>
               <InviteLink inviterName={player?.name || "Someone"} roomId={room.id} btnText="Invite another player" />
             </div>)
           })}

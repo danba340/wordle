@@ -1,12 +1,9 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useCallback } from 'react';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import axios from "axios"
 import { Button, Input } from '@mui/material';
 import toast from 'react-hot-toast';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
 
 import useLocalStorage from '../lib/useLocalstorage';
 import Header from '../components/Header';

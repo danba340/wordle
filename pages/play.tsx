@@ -63,7 +63,7 @@ const Play: NextPage = () => {
       toast.success("You got it! 🎉")
     }
     if (isLoss) {
-      toast("Better luck next time")
+      toast(`Better luck next time. The word was ${answer}`)
     }
     if ((isWin || isLoss)) {
       // Send result to server

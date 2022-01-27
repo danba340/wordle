@@ -57,7 +57,7 @@ const Stats: NextPage = () => {
 		<>
 			<Header />
 			<div>
-				<h1>Stats {room?.name || ""}</h1>
+				<h1>{room?.name || ""} stats</h1>
 				<h2>Best average</h2>
 				<table>
 					<tbody>
