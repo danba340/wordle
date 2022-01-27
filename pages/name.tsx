@@ -2,7 +2,6 @@ import { useEffect, useState, useCallback } from 'react';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import axios from "axios"
-import useSWR from 'swr';
 import { Button, Input } from '@mui/material';
 import toast from 'react-hot-toast';
 import FormGroup from '@mui/material/FormGroup';

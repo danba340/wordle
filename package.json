@@ -3,9 +3,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:prod": "dotenv -e .env.production.local next dev",
     "build": "next build",
     "start": "next start",
-    "prisma:deploy": "dotenv -e .env.prod prisma deploy",
+    "prisma:deploy": "dotenv -e .env.production.local prisma db push",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "dotenv -e .env.local prisma migrate dev",
     "prisma:reset": "dotenv -e .env.local prisma migrate reset",
