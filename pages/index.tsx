@@ -68,6 +68,7 @@ const Home: NextPage = () => {
     try {
       const res = await axios.post(`/api/room/create`, { roomName, playerId: player?.id });
       fetchRooms(player?.id)
+      setNewRoomName('')
       toast.success(`You have created room ${roomName}`)
     } catch (e) {
       toast.error('Server error creating room')
@@ -117,7 +118,7 @@ const Home: NextPage = () => {
                   )
                 })}
               </ul>
-              <div className='text-center'>
+              <div className='text-center my05'>
                 <Button
                   onClick={() => {
                     if (player?.name) {
@@ -131,7 +132,9 @@ const Home: NextPage = () => {
                   Play
                 </Button>
               </div>
-              <InviteLink inviterName={player?.name || "Someone"} roomId={room.id} btnText="Invite another player" />
+              <div className='text-center'>
+                <InviteLink inviterName={player?.name || "Someone"} roomId={room.id} btnText="Invite another player" />
+              </div>
             </div>)
           })}
           <h2>Create room</h2>

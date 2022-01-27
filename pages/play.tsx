@@ -2,7 +2,6 @@ import { useEffect, useState, useCallback } from 'react';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import axios from 'axios';
-import { Button } from '@mui/material';
 import toast from 'react-hot-toast';
 import Header from '../components/Header';
 import Guess from '../components/Guess';

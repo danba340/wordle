@@ -3,6 +3,7 @@ import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import axios from "axios"
 import toast from 'react-hot-toast';
+import { Button } from '@mui/material';
 
 import useLocalStorage from '../lib/useLocalstorage';
 
@@ -56,10 +57,19 @@ const Stats: NextPage = () => {
 	return (
 		<>
 			<Header />
-			<div>
+			<div className="text-center">
 				<h1>{room?.name || ""} stats</h1>
+				<Button
+					onClick={() => {
+						push(`/play`)
+					}}
+					className="my05"
+					variant='outlined'
+				>
+					play again
+				</Button>
 				<h2>Best average</h2>
-				<table>
+				<table className="mxa">
 					<tbody>
 						<tr>
 							<th></th>
@@ -78,7 +88,7 @@ const Stats: NextPage = () => {
 					</tbody>
 				</table>
 				<h2>Best single round</h2>
-				<table>
+				<table className="mxa">
 					<tbody>
 						<tr>
 							<th></th>
