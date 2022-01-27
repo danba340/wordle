@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <CssBaseline />
       <ThemeProvider theme={theme}>
         <Container sx={{ maxWidth: 375 }}>
-          <div className="main flex flex-column mh-100">
+          <div className="main flex flex-column">
             <Component {...pageProps} />
           </div>
         </Container>
