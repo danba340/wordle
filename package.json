@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "dev:prod": "dotenv -e .env.production.local next dev",
+    "prebuild": "npm run prisma:generate",
     "build": "next build",
     "start": "next start",
     "prisma:deploy": "dotenv -e .env.production.local prisma db push",
