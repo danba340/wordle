@@ -75,7 +75,7 @@ const Play: NextPage = () => {
   return (
     <>
       <Header />
-      <InviteLink inviterName={player?.name || "Someone"} roomId={room?.id || ''} btnText="Invite opponent" />
+      <InviteLink roomId={room?.id || ''} btnText="Invite opponent" />
       {match?.word && (
         <div className='flex-1'>
           {match && guesses.map((guess, index) => {

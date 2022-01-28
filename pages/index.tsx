@@ -135,7 +135,7 @@ const Home: NextPage = () => {
                 </Button>
               </div>
               <div className='text-center'>
-                <InviteLink inviterName={player?.name || "Someone"} roomId={room.id} btnText="Invite another player" />
+                <InviteLink roomId={room.id} btnText="Invite another player" />
               </div>
             </div>)
           })}
