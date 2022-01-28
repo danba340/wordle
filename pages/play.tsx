@@ -10,7 +10,7 @@ import Keyboard from '../components/Keyboard';
 import useLocalStorage from '../lib/useLocalstorage';
 import { exists } from '../lib/words';
 
-import { Match, Room, Player } from '../types';
+import { Match, Room, Player, Language } from '../types';
 import InviteLink from '../components/InviteLink';
 
 const Play: NextPage = () => {
@@ -91,7 +91,7 @@ const Play: NextPage = () => {
             toast.error("All 5 letters required to guess")
             return;
           }
-          else if (!exists(guess, room?.language)) {
+          else if (!exists(guess, room?.language || Language.EN)) {
             toast.error("Not in word list")
             return;
           }

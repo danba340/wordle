@@ -9,6 +9,7 @@ export interface Room {
   name: string;
   players: Player[];
   matches: Match[];
+  language: Language;
 }
 
 export interface Match {
@@ -31,6 +32,6 @@ export interface Result {
 }
 
 export enum Language {
-  'EN',
-  'SE',
+  EN,
+  SE,
 }
