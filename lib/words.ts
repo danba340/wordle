@@ -1,14 +1,14 @@
 import { Language } from '../types';
 
 export const getWord = (language: Language) => {
-  if (language === Language.EN) {
+  if (language === 'EN') {
     return wordsEN[Math.floor(Math.random() * wordsEN.length)];
   }
   return wordsSE[Math.floor(Math.random() * wordsSE.length)];
 };
 
 export const exists = (word: string, language: Language) => {
-  if (language === Language.EN) {
+  if (language === 'EN') {
     return wordsEN.includes(word.toLowerCase());
   }
   return wordsSE.includes(word.toLowerCase());

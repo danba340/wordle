@@ -40,7 +40,7 @@ export default async function handle(
     const newMatch = await prisma.match.create({
       data: {
         roomId: String(roomId),
-        word: getWord(Language[room?.language || 'EN']),
+        word: getWord(room?.language || 'EN'),
       },
     });
     res.json(newMatch);

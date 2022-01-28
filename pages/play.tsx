@@ -91,7 +91,7 @@ const Play: NextPage = () => {
             toast.error("All 5 letters required to guess")
             return;
           }
-          else if (!exists(guess, room?.language || Language.EN)) {
+          else if (!exists(guess, room?.language || 'EN')) {
             toast.error("Not in word list")
             return;
           }
