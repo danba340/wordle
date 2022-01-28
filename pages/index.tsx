@@ -107,37 +107,39 @@ const Home: NextPage = () => {
           {!rooms.length ? (<div>No rooms yet</div>) : rooms.map(room => {
             const unplayedInRoom = unplayed ? unplayed.filter(match => match.roomId === room.id).length : []
             console.log(unplayedInRoom)
-            return (<div key={room.id}>
-              <h3>{room.name}</h3>
-              {unplayedInRoom ? (
-                <p className='px2 text-center'>📣 You have {unplayedInRoom} unplayed match{unplayedInRoom === 1 ? "" : "es"} in this room</p>
-              ) : null}
-              <h4>Players</h4>
-              <ul>
-                {room.players.map(player => {
-                  return (
-                    <li key={player.id}>{player.name}</li>
-                  )
-                })}
-              </ul>
-              <div className='text-center my05'>
-                <Button
-                  onClick={() => {
-                    if (player?.name) {
-                      setRoom(room)
-                      push(`/play`)
-                    }
-                  }}
-                  className="my05"
-                  variant='outlined'
-                >
-                  Play
-                </Button>
+            return (
+              <div className='w-100' key={room.id}>
+                <h3>{room.name}</h3>
+                {unplayedInRoom ? (
+                  <p className='px2 text-center'>📣 You have {unplayedInRoom} unplayed match{unplayedInRoom === 1 ? "" : "es"} in this room</p>
+                ) : null}
+                <h4>Players</h4>
+                <ul>
+                  {room.players.map(player => {
+                    return (
+                      <li key={player.id}>{player.name}</li>
+                    )
+                  })}
+                </ul>
+                <div className='text-center my05'>
+                  <Button
+                    onClick={() => {
+                      if (player?.name) {
+                        setRoom(room)
+                        push(`/play`)
+                      }
+                    }}
+                    className="my05"
+                    variant='outlined'
+                  >
+                    Play
+                  </Button>
+                </div>
+                <div className='text-center'>
+                  <InviteLink roomId={room.id} btnText="Invite another player" />
+                </div>
               </div>
-              <div className='text-center'>
-                <InviteLink roomId={room.id} btnText="Invite another player" />
-              </div>
-            </div>)
+            )
           })}
           <h2>Create room</h2>
           <FormGroup>
