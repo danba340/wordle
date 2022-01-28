@@ -9,6 +9,7 @@ import GuessInput from '../components/GuessInput';
 import Keyboard from '../components/Keyboard';
 import useLocalStorage from '../lib/useLocalstorage';
 import { exists } from '../lib/words';
+import { createResultString } from '../lib/share';
 
 import { Match, Room, Player, Language } from '../types';
 import InviteLink from '../components/InviteLink';
@@ -65,6 +66,11 @@ const Play: NextPage = () => {
       toast(`Better luck next time. The word was ${answer}`)
     }
     if ((isWin || isLoss)) {
+      if (typeof window !== 'undefined' && typeof navigator !== 'undefined') {
+        navigator.clipboard.writeText(`${createResultString(answer, guesses)}`)
+        toast('Result copied to clipboard 📋')
+      }
+
       // Send result to server
       saveResult()
     }
