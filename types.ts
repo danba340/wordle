@@ -29,3 +29,8 @@ export interface Result {
   player: Player;
   playerId: string;
 }
+
+export enum Language {
+  'EN',
+  'SE',
+}

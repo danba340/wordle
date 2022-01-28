@@ -5,14 +5,15 @@ export default async function handle(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  const { roomName, playerId } = req.body;
-  if (!roomName || !playerId) {
+  const { roomName, playerId, language } = req.body;
+  if (!roomName || !playerId || !language) {
     res.send(400);
     return;
   }
   await prisma.room.create({
     data: {
       name: String(roomName),
+      language,
       players: {
         connect: { id: String(playerId) },
       },

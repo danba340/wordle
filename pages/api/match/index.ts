@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '../../../lib/prisma';
 import { getWord } from '../../../lib/words';
+import { Language } from '../../../types';
 
 export default async function handle(
   req: NextApiRequest,
@@ -13,6 +14,10 @@ export default async function handle(
     res.send(400);
     return;
   }
+
+  const room = await prisma.room.findUnique({
+    where: { id: String(roomId) },
+  });
 
   const roomMatches = await prisma.match.findMany({
     where: { roomId: String(roomId) },
@@ -35,7 +40,7 @@ export default async function handle(
     const newMatch = await prisma.match.create({
       data: {
         roomId: String(roomId),
-        word: getWord(),
+        word: getWord(Language[room?.language || 'EN']),
       },
     });
     res.json(newMatch);

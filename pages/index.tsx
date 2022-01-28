@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import axios from "axios"
-import { Button, Input } from '@mui/material';
+import { Button, Input, FormGroup, FormControlLabel, Switch } from '@mui/material';
 import toast from 'react-hot-toast';
 
 import useLocalStorage from '../lib/useLocalstorage';
@@ -19,6 +19,7 @@ const Home: NextPage = () => {
   const [unplayed, setUnplayed] = useState<Match[] | null>(null)
   const [roomInvite, setRoomInvite] = useState<Room | null>(null)
   const [newRoomName, setNewRoomName] = useState("");
+  const [language, setLanguage] = useState('EN')
 
   const fetchRoom = useCallback(async (roomId) => {
     try {
@@ -64,9 +65,9 @@ const Home: NextPage = () => {
     }
   }, [player, rooms, unplayed, fetchUnplayed])
 
-  const createRoom = useCallback(async (roomName) => {
+  const createRoom = useCallback(async (roomName, language) => {
     try {
-      const res = await axios.post(`/api/room/create`, { roomName, playerId: player?.id });
+      const res = await axios.post(`/api/room/create`, { roomName, playerId: player?.id, language });
       fetchRooms(player?.id)
       setNewRoomName('')
       toast.success(`You have created room ${roomName}`)
@@ -139,6 +140,16 @@ const Home: NextPage = () => {
             </div>)
           })}
           <h2>Create room</h2>
+          <FormGroup>
+            <FormControlLabel control={
+              <Switch
+                value={language === "EN"}
+                onChange={(e) => {
+                  setLanguage(e.target.checked ? 'SE' : 'EN')
+                }}
+              />
+            } label={language === 'EN' ? "English" : 'Swedish'} />
+          </FormGroup>
           <Input
             className='text-field'
             placeholder='Choose a room name'
@@ -150,7 +161,7 @@ const Home: NextPage = () => {
           <Button
             onClick={() => {
               if (newRoomName.length) {
-                createRoom(newRoomName)
+                createRoom(newRoomName, language)
               }
             }}
             className="my05"

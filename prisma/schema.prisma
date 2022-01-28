@@ -7,6 +7,11 @@ generator client {
         provider = "prisma-client-js"
 }
 
+enum Language {
+        SE
+        EN
+}
+
 model Player {
         id     String   @id @default(uuid())
         name   String
@@ -15,10 +20,11 @@ model Player {
 }
 
 model Room {
-        id      String   @id @default(uuid())
-        name    String
-        matches Match[]
-        players Player[]
+        id       String   @id @default(uuid())
+        name     String
+        matches  Match[]
+        players  Player[]
+        language Language @default(EN)
 }
 
 model Match {

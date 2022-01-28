@@ -8,8 +8,9 @@ import { Button } from '@mui/material';
 import useLocalStorage from '../lib/useLocalstorage';
 
 import Header from '../components/Header';
+import InviteLink from '../components/InviteLink';
 
-import { Player, Room, Match } from "../types";
+import { Room } from "../types";
 
 const Stats: NextPage = () => {
 	const { push } = useRouter()
@@ -59,15 +60,18 @@ const Stats: NextPage = () => {
 			<Header />
 			<div className="text-center">
 				<h1>{room?.name || ""} stats</h1>
-				<Button
-					onClick={() => {
-						push(`/play`)
-					}}
-					className="my05"
-					variant='outlined'
-				>
-					play again
-				</Button>
+				<div>
+					<Button
+						onClick={() => {
+							push(`/play`)
+						}}
+						className="my05"
+						variant='outlined'
+					>
+						play again
+					</Button>
+				</div>
+				<InviteLink roomId={room?.id || ''} btnText="Get invite link" />
 				<h2>Best average</h2>
 				<table className="mxa">
 					<tbody>
